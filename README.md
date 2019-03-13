@@ -7,16 +7,17 @@ There several cases to consider:
 Initial => Initial state provided to the Redux `createStore()`
 Persisted => Persisted state provided by `persistState` from redux-localstorage
 
-Initial | Persisted | Result
-Unversioned | Unversioned or Versioned | Merge
-Unversioned | Empty or missing | Take Initial
-Versioned | Unversioned | Take Initial
-v2 | v1 | Take Initial
-v2 | v3 | Take Initial^
-v2 | v2 | Merge
-v2 | Empty or missing | Take initial
+| Initial     | Persisted                | Result        |
+| ----------- | ------------------------ | ------------- |
+| Unversioned | Unversioned or Versioned | Merge         |
+| Unversioned | Empty or missing         | Take Initial  |
+| Versioned   | Unversioned              | Take Initial  |
+| v2          | v1                       | Take Initial  |
+| v2          | v3                       | Take Initial^ |
+| v2          | v2                       | Merge         |
+| v2          | Empty or missing         | Take initial  |
 
-^ - We chose to favor usuing the initial state when version do not match so taht 'rollback's are possible.
+^ - We chose to favor usuing the initial state when versions do not match so that rollback's are possible.
 
 ## Examples
 See the Examples folder

@@ -6,7 +6,7 @@ const versionReducer = initialState => (state = initialState) => {
 
 export const reducer = combineReducers({
   // YOUR_OTHER_REDUCERS
-  version: versionReducer({/* You could set you defauklt version here if you wish */})
+  version: versionReducer({/* You could set you default version here if you wish */ })
 });
 
 export default { reducer };
